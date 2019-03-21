@@ -2,6 +2,10 @@
 #include<conio.h>
 #include<stdlib.h>
 
+/*
+Hash function to from the password, create a hash value.
+*/
+
 unsigned long FNVHash(unsigned char *str){
     unsigned long hash = 5381;
     int c;
@@ -14,15 +18,15 @@ unsigned long FNVHash(unsigned char *str){
 
 void main(){
 	
-    char fpassword[30]; 
-	char fname[20];
-    char ch;
-    char choice;
-	FILE *fps, *fpt;
-    unsigned long hash;
+     char fpassword[30]; //password to modife the file
+	char fname[20]; //name of the file
+    char ch; //character that will be modife
+    char choice; //
+	FILE *fps, *fpt; //Call of the files
+    unsigned long hash; //hash value that we will use to make the encrypt
 
-	printf("Enter file name (with extension like file.txt) which you have encrypted earlier to decrypt : ");
-	gets(fname);
+	printf("Enter file name to encrypt, pls : ");
+    scanf("%s",&fname);
 	fps=fopen(fname, "w");
 
 	if(fps==NULL){
